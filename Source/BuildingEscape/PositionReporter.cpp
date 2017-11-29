@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #include "PositionReporter.h"
 
 
@@ -19,6 +17,8 @@ void UPositionReporter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	FString name = GetOwner()->GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s is at position %s"), *name, *GetOwner()->GetTargetLocation().ToString());
 	// ...
 	
 }
@@ -31,4 +31,3 @@ void UPositionReporter::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 
 	// ...
 }
-
