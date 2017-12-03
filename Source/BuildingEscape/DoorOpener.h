@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Gameframework/Actor.h"
 #include "Components/ActorComponent.h"
 #include "DoorOpener.generated.h"
 
@@ -20,10 +21,15 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-public:	
+public:
+	float closeSpeed = 1.0f;
+	void OpenDoor();
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+private:
+	bool isOpen = false;
+	float start = 0.f;
+	float initialYaw = 0.f;
 	
 };
